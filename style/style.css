@@ -6,6 +6,8 @@
     --font-color: #000;
     --font-hover-color: #3800a6;
     --bg-color: #EDE4FF;
+    --light-effect: #f3effa;
+    --shadow-effect: #d1c5e9;
 }
 
 *{
@@ -19,8 +21,16 @@
     background-color: var(--bg-color);
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 /* HEADER */
 header{
+    width: 90vw;
     position: relative;
     padding: 1rem 2rem;
     font-family: var(--font-titles);
@@ -43,6 +53,7 @@ header{
     align-items: center;
     gap: 1.25rem;
     font-weight: 700;
+    font-family: var(--font-titles);
     font-size: 1.5rem;
 }
 
@@ -65,8 +76,26 @@ header{
     font-weight: 700;
 }
 
+li a{
+    background-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 90%,
+        var(--font-hover-color) 90%,
+        var(--font-hover-color) 100%
+    );
+
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position-x: right;
+
+    transition: background-size 300ms;
+}
+
 li a:hover{
     color: var(--font-hover-color);
+    background-size: 100% 100%;
+    background-position-x: left;
 }
 
 /* NAV SOCIAL MEDIAS */
@@ -104,10 +133,10 @@ li a:hover{
     width: 40px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: -8px -4px 8px 0px #f3effa,
-    8px 4px 12px 0px #d1c5e9,
-    4px 4px 4px 0px #d1c5e9 inset,
-    -4px -4px 4px 0px #f3effa inset;
+    box-shadow: -8px -4px 8px 0px var(--light-effect),
+    8px 4px 12px 0px var(--shadow-effect),
+    4px 4px 4px 0px var(--shadow-effect) inset,
+    -4px -4px 4px 0px var(--light-effect) inset;
 }
 
 .toggle_theme-state {
@@ -125,8 +154,8 @@ li a:hover{
     border-radius: 10px;
     transform: translate3d(-75%, 0, 0);
     transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
-    box-shadow: -8px -4px 8px 0px #f3effa,
-    8px 4px 12px 0px #d1c5e9;
+    box-shadow: -8px -4px 8px 0px var(--light-effect),
+    8px 4px 12px 0px var(--shadow-effect);
 }
 
 .indicator i{
@@ -177,6 +206,28 @@ li a:hover{
     background-color: rgba(255, 255, 255, 0.0);
 }
 
+/* MAIN */
+.apresentacao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+}
+
+.apresentacao_conteudo{
+    width: 70%;
+}
+
+.apresentacao_conteudo_titulo{
+    font-family: var(--font-titles);
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+}
+
+.apresentacao_icon{
+    width: 30%;
+}
+
 @media(max-width:992px){
     .navbar .links{
         display: none;
@@ -188,6 +239,7 @@ li a:hover{
 
     .dropddown_menu{
         display: block;
+        font-weight: 700;
     }
 }
 
