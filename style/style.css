@@ -31,6 +31,7 @@ body{
 /* HEADER */
 header{
     position: fixed;
+    z-index: 2;
     top: 0;
     width: 90vw;    
     padding: 1rem 2rem;
@@ -179,7 +180,7 @@ li a:hover{
 .dropddown_menu{
     display: none;
     position: absolute;
-    z-index: 4;
+    z-index: 100;
     right: 2rem;
     top: 60px;
     height: 0;
@@ -187,6 +188,7 @@ li a:hover{
     border-radius: 10px;
     overflow: hidden;
     transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
 }
 
 .dropddown_menu.open{
@@ -195,7 +197,7 @@ li a:hover{
 
 .dropddown_menu li{
     position: relative;
-    z-index: 5;
+    z-index: 100;
     padding: 0.7rem;
     display: flex;
     align-items: center;
@@ -301,11 +303,20 @@ li a:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: static;
+    position: relative;
+    z-index: 0;
 }
 
 .apresentacao_icon .braces{
+    position: relative;
+    z-index: 0;
     width: 15%;
+    background: transparent;
+    -webkit-filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+    -moz-filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+    -ms-filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+    -o-filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
 }
 
 .apresentacao_icon .rocket_and_shadow{
@@ -317,7 +328,14 @@ li a:hover{
 }
 
 .rocket_and_shadow .rocket{
-    position: static;
+    background: transparent;
+    -webkit-filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+    -moz-filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+    -ms-filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+    -o-filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+    position: relative;
+    z-index: 0;
     animation: rocket 3s ease-in-out infinite;
 }
 
@@ -362,6 +380,7 @@ li a:hover{
     .apresentacao{
         flex-direction: column-reverse;
         margin-top: 10rem;
+        gap: 3.2rem;
     }
 
     .apresentacao_conteudo{
@@ -383,6 +402,7 @@ li a:hover{
 
     .apresentacao{
         margin-top: 10rem;
+        gap: 3.2rem;
     }
 
     .apresentacao_icon{
