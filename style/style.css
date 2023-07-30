@@ -179,6 +179,7 @@ li a:hover{
 .dropddown_menu{
     display: none;
     position: absolute;
+    z-index: 4;
     right: 2rem;
     top: 60px;
     height: 0;
@@ -193,6 +194,8 @@ li a:hover{
 }
 
 .dropddown_menu li{
+    position: relative;
+    z-index: 5;
     padding: 0.7rem;
     display: flex;
     align-items: center;
@@ -218,21 +221,20 @@ li a:hover{
 /* MAIN */
 .apresentacao{
     width: 90vw;
-    margin-top: 6.5rem;
-    padding: 1rem 2rem;
+    margin-top: 14rem;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 1.5rem; 
 }
 
 .apresentacao_conteudo{
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2.5rem;
-    /* width: 70%; */
 }
 
 .apresentacao_conteudo_titulo{
@@ -294,7 +296,53 @@ li a:hover{
 }
 
 .apresentacao_icon{
-    width: 25rem;
+    width: 40%;
+    padding: 0 8rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: static;
+}
+
+.apresentacao_icon .braces{
+    width: 15%;
+}
+
+.apresentacao_icon .rocket_and_shadow{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: static;
+}
+
+.rocket_and_shadow .rocket{
+    position: static;
+    animation: rocket 3s ease-in-out infinite;
+}
+
+.rocket_and_shadow .shadow{
+    background-color: #888888;
+    width: 50%;
+    height: 7px;
+    border-radius: 50%;
+    margin:auto;
+    box-shadow: 0 0 8px 9px #888888;
+    animation: shadow 3s ease-in-out infinite;
+}
+
+@keyframes shadow{
+    0%, 100%{width: 50%;box-shadow: 0 0 8px 9px #888888;}
+    50%{width: 37.5%;box-shadow: 0 0 4px 8px #888888;}
+}
+
+@keyframes rocket{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-2rem);
+    }
 }
 
 @media(max-width:992px){
@@ -313,7 +361,18 @@ li a:hover{
 
     .apresentacao{
         flex-direction: column-reverse;
+        margin-top: 10rem;
     }
+
+    .apresentacao_conteudo{
+        width: 90%;
+    }
+
+    .apresentacao_icon{
+        width: 50%;
+        padding: 0;
+    }
+
 }
 
 @media(max-width:576px){
@@ -321,4 +380,14 @@ li a:hover{
         left: 2rem;
         width: unset;
     }
+
+    .apresentacao{
+        margin-top: 10rem;
+    }
+
+    .apresentacao_icon{
+        width: 70%;
+        padding: 0;
+    }
+
 }
