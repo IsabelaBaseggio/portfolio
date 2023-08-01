@@ -398,7 +398,7 @@ li a:hover{
     margin-bottom: 10rem;
     display: flex;
     justify-content: space-evenly;
-    align-items: start;
+    align-items: center;
 }
 
 .sobre .sobre_foto{
@@ -421,8 +421,9 @@ li a:hover{
     
 }
 
- .sobre .sobre_texto{
+.sobre .sobre_texto{
     width: 50%;
+    font-size: 1.2rem;
 }
 
 /*
@@ -459,6 +460,14 @@ li a:hover{
         padding: 0;
     }
 
+    .sobre{
+        flex-direction: column;
+    }
+
+    .sobre .sobre_texto{
+        width: 90%;
+    }
+
 }
 
 @media(max-width:576px){
@@ -475,6 +484,16 @@ li a:hover{
     .apresentacao_icon{
         width: 70%;
         padding: 0;
+    }
+
+    .sobre .sobre_foto{
+        width: 18rem;
+        height: 18rem;
+    }
+    
+    .sobre .sobre_foto img{
+        width: 14rem;
+        height: 14rem;
     }
 
 }
