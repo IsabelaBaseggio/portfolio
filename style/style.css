@@ -301,17 +301,13 @@ li a:hover{
 }
 
 .apresentacao_conteudo_btns .social_medias li a img{
-    width: 2rem;
+    width: 50%;
 }
 
-.apresentacao_conteudo_btns .social_medias li a:active, .apresentacao_conteudo_btns .curriculo:active{
-    box-shadow: -8px -4px 8px 0px var(--light-effect),
-    8px 4px 12px 0px var(--shadow-effect),
-    4px 4px 4px 0px var(--shadow-effect) inset,
-    -4px -4px 4px 0px var(--light-effect) inset;
+.apresentacao_conteudo_btns .social_medias li a:hover{
+    width: 104%;
+    height: 104%;
 }
-
-
 
 .apresentacao_conteudo_btns .curriculo{
     width: 18rem;
@@ -328,6 +324,17 @@ li a:hover{
     display: grid;
     place-items: center;
     cursor: pointer; 
+}
+
+.apresentacao_conteudo_btns .curriculo:hover{
+    color: var(--font-hover-color);
+}
+
+.apresentacao_conteudo_btns .social_medias li a:active, .apresentacao_conteudo_btns .curriculo:active{
+    box-shadow: -8px -4px 8px 0px var(--light-effect),
+    8px 4px 12px 0px var(--shadow-effect),
+    4px 4px 4px 0px var(--shadow-effect) inset,
+    -4px -4px 4px 0px var(--light-effect) inset;
 }
 
 .apresentacao_icon{
@@ -408,7 +415,7 @@ li a:hover{
     display: grid;
     /* grid-template-rows: auto auto;
     grid-template-columns: 50% auto; */
-    grid-template: 22rem auto / 50% auto auto;
+    grid-template: 24rem auto / 50% auto auto;
     grid-template-areas: "a1 a2" "a3 a2";
     justify-items: center;
     /* align-items: center; */
@@ -448,6 +455,12 @@ li a:hover{
 .sobre .sobre_texto p{
     text-indent: 1.5em; 
     text-align: justify;
+}
+
+.sobre .sobre_texto p span{
+    color: var(--font-hover-color);
+    /* text-decoration: underline; */
+    font-weight: 600;
 }
 
 .sobre .sobre_info{
